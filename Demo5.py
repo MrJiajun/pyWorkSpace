@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, flash
 
 app = Flask(__name__)
 
@@ -15,6 +15,11 @@ def getResource(uid):
 	colors = ('red','yellow','green')
 	paymentinfo = {'be': '银企', 'cas': '出纳', 'fs':'结算', 'cbs':'跨境支付'}
 	return render_template("profile.html", uid = uid, colors=colors, paymentinfo=paymentinfo)
+
+
+@app.route('/redirect', methods=['GET', 'POST'])
+def redirect():
+	return redirect('/index')
 
 
 if __name__ == '__main__':
