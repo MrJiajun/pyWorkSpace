@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<link ref="stylesheet" type="text/css" href="/static/c1.css">
+<head>
+    <title>My Webpage</title>
+</head>
+<body>
+    <ul id="navigation">
+    {% for item in navigation %}
+        <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+    {% endfor %}
+    </ul>
+    <h1>My Webpage</h1>
+
+    <br>
+    profile : {{ uid }}
+
+    <br>
+    <br>
+    range :
+    <br>
+    {% for i in range(0, 5) %}
+        profile : i <br>
+    {% endfor %}
+
+
+    {% for i in range(0, 5) %}
+        profile : i <br>
+    {% endfor %}
+    <br>
+    <br>
+    Color range form website:
+    <br>
+    {% for color in colors: %}
+    <li> {{loop.index}}  {{color}}</li>
+    {% endfor %}
+
+    <br>
+    <br>
+    大小写转换:
+    <br>This text becomes uppercase
+    <br>
+    {% filter upper %}
+    This text becomes uppercase
+    {% endfilter %}
+
+    {{ a_variable }}
+
+    {#  注释 ：a comment hide #}
+
+    <br>
+    <br>
+    paymentinfo range form website:
+    <br>
+    # for k, v in paymentinfo.items():
+    <li> {{loop.index}}  {{k}} {{v}}</li>
+    # endfor
+
+
+    <br>
+    <br>
+    （macro）函数调用:
+    <br>
+    {% macro render_color(color) %}
+    <div> this is color {{color}}</div><br>{{ caller() }}
+    {%endmacro %}
+
+
+    {% for color in colors: %}
+        {% call render_color(color) %}
+            render_color_demo
+        {% endcall %}
+    {% endfor %}
+
+</body>
+</html>
