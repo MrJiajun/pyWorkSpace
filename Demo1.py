@@ -39,9 +39,9 @@ def create_user(type):
 # 继承与多态：面向对象
 if __name__ == '__main__':
 	# 继承
-	user1 = User("user1", 1)
+	user1 = User("xiaoxiao", 1)
 	print(user1)
-	admin1 = Admin("admin1", 1, "gourp8")
+	admin1 = Admin("KdAmdin", 1, "fin")
 	print(admin1)
 	# 多态
-	print(create_user("uegsd"))
+	print(create_user("zly"))
